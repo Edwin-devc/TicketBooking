@@ -4,15 +4,17 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     let formData = new FormData(form); //collecting the form data
     //assigning form data
-    let username = formData.get("username");
-    let secondName = formData.get("otherNames");
+    const firstname = formData.get("username");
+    const secondname = formData.get("otherNames");
+    const email = formData.get("emailID");
+    const contact = formData.get("telNo");
     const data = {
-        fname: username,
-        oname: secondName
+        firstname: firstname,
+        secondname: secondname,
+        email: email,
+        contact: contact,
+        ticketId: generateTicketId()
     };
-      
-    const blob = new Blob([JSON.stringify(data)], {type: "application/json"});
-    saveAs(blob, "form-data.json"); // this will download the file
     validateForm();
     displayTicketIdGenerated();
     form.reset();
