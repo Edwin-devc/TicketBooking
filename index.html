@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-center">
+            <h2>BOOKING PORTAL</h2>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="left">
+                <form action="" id="form" class="form" name="inputForm" method="post">
+                    <label for="surname">Surname</label>
+                    <br>
+                    <input type="text" placeholder="Enter your surname" id="sname" name="username">
+                    <br>
+                    <div id="errormsg_surname"></div>
+                    <label for="Other names">Other names</label>
+                    <br>
+                    <input type="text" placeholder="Enter your other names" name="otherNames" id="secondName">
+                    <br>
+                    <div id="errormsg_otherNames"></div>
+                    <label for="email">Email address</label>
+                    <br>
+                    <input type="email" placeholder="Enter your email address" name="email" id="emailAddress">
+                    <br>
+                    <div id="errormsg_email"></div>
+                    <label for="telephone">Tel Number</label>
+                    <br>
+                    <input type="text" name="telno" id="telephone_number" placeholder="+256756342045">
+                    <br>
+                    <div id="errormsg_tel"></div>
+                    <button type="submit">Generate Ticket</button>
+                </form>
+            </div>
+            <div class="middle">
+                <h4>Tickets Generated</h4>
+                <div class="recent_ticket">
+                    <p>#E398IT</p>
+                    <p>#21ZTE5</p>
+                </div>
+                
+            </div>
+            <div class="right">
+                <h4>Ticket search</h4>
+                <form action="" class="searchForm">
+                    <input type="text" placeholder="Ticket ID">
+                    <button>SEARCH</button>
+                </form>
+            </div>
+        </div>
+    </main>
+<script src="booking.js"></script>
+</body>
+
+</html>

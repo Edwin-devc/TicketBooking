@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-center {
+    display: flex;
+    padding: 1.2rem 2rem;
+    background: #000;
+    justify-content: center;
+}
+
+.nav-center h2 {
+    color: #fff;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+#form {
+    padding: 2rem;
+}
+
+#form label {
+    font-weight: 600;
+    font-family: Helvetica, sans-serif;
+}
+#form input{
+    padding: .3rem 1rem;
+    margin: 1rem 0;
+    width: 20rem;
+    outline: 1px #000 solid;
+    border: none;
+}
+#form button {
+    background: #000;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-family: Helvetica, sans-serif;
+}
+.middle h4, .right h4{
+    padding-top: 2rem;
+    font-weight: 600;
+    font-family: Helvetica, sans-serif;
+}
+.searchForm {
+    padding-top: 1rem;
+}
+.searchForm input {
+    padding: .2rem 1rem;
+    width: 10rem;
+    margin-right: 0;
+}
+.searchForm button {
+    padding: .3rem 1rem;
+    border: none;
+    outline: none;
+    background: #000;
+    color: #fff;
+    font-family: Helvetica, sans-serif;
+    font-weight: 600;
+}
+.middle .recent_ticket p{
+    background: #eee;
+    border-radius: 4px;
+    padding: .3rem 2.5rem;
+    margin: 3px;
+}
