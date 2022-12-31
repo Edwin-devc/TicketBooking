@@ -1,25 +1,31 @@
+const fs = require('fs');
 const form = document.getElementById("form");
-
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    let formData = new FormData(form); //collecting the form data
+    validateForm();
+    displayTicketIdGenerated();
+    const formData = new FormData(form); //collecting the form data
     //assigning form data
-    const firstname = formData.get("username");
-    const secondname = formData.get("otherNames");
-    const email = formData.get("emailID");
-    const contact = formData.get("telNo");
-    const data = {
+    let firstname = formData.get("username");
+    let secondname = formData.get("otherNames");
+    let email = formData.get("emailID");
+    let contact = formData.get("telNo");
+    let data = {
         firstname: firstname,
         secondname: secondname,
         email: email,
         contact: contact,
-        ticketId: generateTicketId()
-    };
-    validateForm();
-    displayTicketIdGenerated();
+        ticketId: generateTicketId() 
+    }
+    let jsonData = JSON.stringify(data);
+    fs.writeFile('form-data.json', jsonData, (err) => {
+        if(err) throw err;
+        console.log("Data added to file");
+    })
     form.reset();
 })
-
+//creating a function to get data and store it into a json string
+// making  
 
 //functions
 const validateForm = () => {
