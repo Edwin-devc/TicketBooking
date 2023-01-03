@@ -1,15 +1,19 @@
-const fs = require('fs');
 const form = document.getElementById("form");
+const details = [];
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     validateForm();
     displayTicketIdGenerated();
-    const formData = new FormData(form); //collecting the form data
+    //const formData = new FormData(form); //collecting the form data
     //assigning form data
-    let firstname = formData.get("username");
-    let secondname = formData.get("otherNames");
-    let email = formData.get("emailID");
-    let contact = formData.get("telNo");
+    const username = document.inputForm.username.value;
+    const otherNames = document.inputForm.otherNames.value;
+    const emailID = document.inputForm.email.value;
+    const telNo = document.inputForm.telno.value;
+    let firstname = username;
+    let secondname = otherNames;
+    let email = emailID;
+    let contact = telNo;
     let data = {
         firstname: firstname,
         secondname: secondname,
@@ -17,15 +21,18 @@ form.addEventListener('submit', (e) => {
         contact: contact,
         ticketId: generateTicketId() 
     }
-    let jsonData = JSON.stringify(data);
-    fs.writeFile('form-data.json', jsonData, (err) => {
-        if(err) throw err;
-        console.log("Data added to file");
-    })
-    form.reset();
-})
-//creating a function to get data and store it into a json string
-// making  
+    details.push(data);
+    const recentTickets = document.getElementById('recent');
+    for (let i = 0; i < details.length; i++) {
+        const item = details[i];
+        recentTickets.innerHTML += `
+        <div>
+            <p>${item.ticketId}</p>
+        </div>` 
+    }
+    
+    e.target.reset();
+});
 
 //functions
 const validateForm = () => {
